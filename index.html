@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>OA Tracker - Student Tracker System</title>
+
+<style>
+
+body{
+font-family: Arial, sans-serif;
+margin:0;
+background:#0c0c0c;
+color:rgb(247, 247, 247);
+}
+
+header{
+background:black;
+padding:20px;
+text-align:center;
+}
+
+header img{
+width:200px;
+}
+
+nav{
+background:#111;
+padding:10px;
+text-align:center;
+}
+
+nav a{
+color:gold;
+margin:15px;
+text-decoration:none;
+font-weight:bold;
+}
+
+section{
+padding:40px;
+text-align:center;
+}
+
+form{
+background:#111;
+padding:20px;
+width:300px;
+margin:auto;
+border-radius:10px;
+}
+
+input{
+width:90%;
+padding:10px;
+margin:10px;
+border:none;
+border-radius:5px;
+}
+
+button{
+padding:10px 20px;
+background:gold;
+border:none;
+font-weight:bold;
+cursor:pointer;
+}
+
+table{
+margin:auto;
+margin-top:30px;
+border-collapse:collapse;
+width:80%;
+}
+
+table, th, td{
+border:1px solid gold;
+}
+
+th,td{
+padding:10px;
+}
+
+footer{
+background:black;
+padding:15px;
+text-align:center;
+margin-top:40px;
+}
+
+</style>
+</head>
+
+<body>
+
+<header>
+
+<img src="logo.jpg" alt="OA Tracker Logo">
+
+<h1>OA TRACKER</h1>
+<p>Student Tracker System</p>
+
+</header>
+
+<nav>
+
+<a href="#">Home</a>
+<a href="#">Students</a>
+<a href="#">Contact</a>
+
+</nav>
+
+<section>
+
+<h2>Add Student</h2>
+
+<form id="studentForm">
+
+<input type="text" id="name" placeholder="Student Name" required>
+
+<input type="text" id="index" placeholder="Index Number" required>
+
+<input type="text" id="program" placeholder="Programme" required>
+
+<button type="submit">Add Student</button>
+
+</form>
+
+<table>
+
+<thead>
+<tr>
+<th>Name</th>
+<th>Index Number</th>
+<th>Programme</th>
+</tr>
+</thead>
+
+<tbody id="studentTable">
+
+</tbody>
+
+</table>
+
+</section>
+
+<footer>
+
+<p>© 2026 OA Tracker System</p>
+
+</footer>
+
+<script>
+
+document.getElementById("studentForm").addEventListener("submit", function(e){
+
+e.preventDefault();
+
+let name = document.getElementById("name").value;
+let index = document.getElementById("index").value;
+let program = document.getElementById("program").value;
+
+let table = document.getElementById("studentTable");
+
+let row = table.insertRow();
+
+row.insertCell(0).innerHTML = name;
+row.insertCell(1).innerHTML = index;
+row.insertCell(2).innerHTML = program;
+
+document.getElementById("studentForm").reset();
+
+});
+
+</script>
+
+</body>
+</html>
